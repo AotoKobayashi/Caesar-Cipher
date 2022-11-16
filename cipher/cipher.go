@@ -2,9 +2,11 @@ package cipher
 
 import (
 	"strings"
+
+	"github.com/AotoKobayashi/Xharacter"
 )
 
-func findIndex(char string, alphabet [27]string) int {
+func findIndex(char string, alphabet []string) int {
 	for n := 0; n < len(alphabet); n++ {
 		if alphabet[n] == char {
 			return n
@@ -17,8 +19,7 @@ func findIndex(char string, alphabet [27]string) int {
 
 // base 4
 func Caesar_C(message string) string {
-	alphabet := [...]string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
-		"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "}
+	alphabet := append(Xharacter.AlphabetMi(), " ")
 	newmessage := strings.Split(message, "")
 
 	for n := 0; n < len(newmessage); n++ {
@@ -41,8 +42,7 @@ func Caesar_C(message string) string {
 }
 
 func Caesar_D(message string) string {
-	alphabet := [...]string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
-		"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "}
+	alphabet := append(Xharacter.AlphabetMi(), " ")
 	newmessage := strings.Split(message, "")
 
 	for n := 0; n < len(newmessage); n++ {
